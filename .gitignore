@@ -1,0 +1,8 @@
+*.exe
+*.in
+*.pdf
+priority_queue.cpp
+save_Konoha.cpp
+map.cpp
+1.cpp
+ordered_set.cpp
