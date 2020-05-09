@@ -48,10 +48,7 @@ int main()
 				move = 0;
 			}
 		}
-		if (v.size() == 1) {
-			cout << count << " " << at << " " << bt << endl;
-			continue;
-		}
+		
 		cout << count << " " << at << " " << bt;
 		cout << '\n';
 	}
