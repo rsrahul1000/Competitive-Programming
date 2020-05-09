@@ -22,7 +22,7 @@ int main()
     vector<int> dp(n+1);
  
     //initialize
-    dp[0]=0;
+    //dp[0]=0;
  
     for(i=1;i<=n;i++)
     {
@@ -51,6 +51,7 @@ int main()
         cout<<dp[n];
  
     cout<<endl;
-
+    for(auto i : dp) cout << i << " ";
+    cout << endl;
     return 0;
 }
