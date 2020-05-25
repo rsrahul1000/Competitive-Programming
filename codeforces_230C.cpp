@@ -1,3 +1,4 @@
+// https://codeforces.com/contest/230/problem/C
 // Created by Rahul Sharma
 #include <bits/stdc++.h>
 //#include<conio.h>
@@ -7,18 +8,18 @@ using namespace std;
 using ll = long long;
 
 // In-place rotates s towards left by d 
-vector<string> leftrotate(string &s, int d, vector<string> v)
+vector<string> leftrotate(int i, int d, vector<string> v)
 {
-	reverse(s.begin(), s.begin() + d);
-	reverse(s.begin() + d, s.end());
-	reverse(s.begin(), s.end());
+	reverse(v[i].begin(), v[i].begin() + d);
+	reverse(v[i].begin() + d, v[i].end());
+	reverse(v[i].begin(), v[i].end());
 	return v;
 }
 
 // In-place rotates s towards right by d 
-vector<string> rightrotate(string &s, int d, vector<string> v)
+vector<string> rightrotate(int i, int d, vector<string> v)
 {
-	leftrotate(s, s.length() - d, v);
+	leftrotate(i, v[i].length() - d, v);
 	return v;
 }
 
@@ -35,8 +36,8 @@ int findMin(vector<string> &v, int count) {
 	}
 	if (flag == false) return count + 1;
 	rep(i, v.size()) {
-		count = min(1 + findMin(leftrotate(v[i], 1, v), count),
-			(1 + findMin(rightrotate(v[i], 1, v), count)));
+		count = min(1 + findMin(leftrotate(i, 1, v), count),
+			(1 + findMin(rightrotate(i, 1, v), count)));
 	}
 	return count;
 }
