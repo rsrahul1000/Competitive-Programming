@@ -66,26 +66,29 @@
 #define repD(i,a,n) for(int i=a;i>=(n);--i)
 
 using namespace std;
-using ll = long long;
+using ll = long long int;
 
 int main()
 {
     ios::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
-    int n, x, a, b, t;
+    ll n, x, a, b, t;
     cin>>n;
-    vector<ll> v(n+1);
+    vector<ll> v(100001);
 
     rep(i, n) {
     	cin >> x;
     	v[x] += x;
     }
+    // for (int i: v) cout << i << " ";
+    // cout << endl;
     a=b=0;
-    for(int i: v){
+    for(ll i: v){
     	t = a;
     	a = max(a, i+b);
     	b = t;
+    	//cout << a << " " << i << " " << b << endl;
     }
 
     cout << a << endl;
