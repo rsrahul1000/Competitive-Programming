@@ -115,9 +115,8 @@ int main()
     repA(i, 2, N - 1)
     {
         dp[i] = max(dp[i - 1], dp[i - 2] + fr[i] * i);
+        cout << dp[i] << " " << dp[i-1] << " " << dp[i-2] << " " << fr[i]  << " " << i << " " << fr[i] * i << endl;
     }
     cout << dp[N - 1] << endl;
-    //cout << (double(clock() - tt)/CLOCKS_PER_SEC * 1.00) << endl;
-    //system("sleep 50");
     return 0;
 }
